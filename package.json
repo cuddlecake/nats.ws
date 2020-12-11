@@ -1,6 +1,6 @@
 {
   "name": "nats.ws",
-  "version": "1.0.0-114",
+  "version": "1.0.0-115",
   "description": "WebSocket NATS client",
   "main": "nats.mjs",
   "types": "nats.d.ts",
@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "setup": "curl -fsSL https://deno.land/x/install/install.sh | sh",
-    "build": "deno run --allow-all --unstable --reload src/mod.ts && deno bundle --unstable src/mod.ts ./nats.mjs",
+    "build": "deno run --allow-all --unstable --reload src/mod.ts && deno bundle --log-level info --unstable src/mod.ts ./nats.mjs",
     "prepack": "npm run build",
     "fmt": "deno fmt src/*.ts examples/*.js test/*.js test/*/*.js",
     "start-tls-nats": "cd examples && ../nats-server -c tls.conf",

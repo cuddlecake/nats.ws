@@ -23,7 +23,7 @@ import {
 
 import { WsTransport } from "./ws_transport.ts";
 
-export function urlParseFn(u: string): string {
+export function wsUrlParseFn(u: string): string {
   const ut = /^(.*:\/\/)(.*)/;
   if (!ut.test(u)) {
     u = `https://${u}`;
@@ -57,7 +57,7 @@ export function urlParseFn(u: string): string {
 }
 
 export function connect(opts: ConnectionOptions = {}): Promise<NatsConnection> {
-  setUrlParseFn(urlParseFn);
+  setUrlParseFn(wsUrlParseFn);
 
   setTransportFactory((): Transport => {
     return new WsTransport();
